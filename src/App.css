@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+.star {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  margin: 2px;
+  float: left; background-color: grey; clip-path: polygon(50% 0%, 63% 38%,100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.star.selected {
+  background-color: rgb(255, 208, 12);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.colorShowcase {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.colorDiv {
+  width: 250px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+}
+
+.colorList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.deleteButton {
+  outline:none;
+  background-color: #ff5e5e;
+  border-width: 0;
+  border-radius: 4px;
   color: white;
+  font-size: 20px;
+  margin-top: 10px;
+  align-self: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.deleteButton:hover {
+  background-color: #ff0000;
 }
