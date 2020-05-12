@@ -43,3 +43,37 @@
 .deleteButton:hover {
   background-color: #ff0000;
 }
+
+.addColorForm {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputColorTitle {
+  font-size: 30px;
+}
+
+.inputColor {
+  padding: 0;
+  margin-left: 10px;
+  border-width: 0;
+  height: 40px;
+  width: 60px;
+}
+
+.addButton {
+  outline:none;
+  background-color: #8e5eff;
+  border-width: 0;
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+  height: 90%;
+}
+
+.addButton:hover {
+  background-color: #5900ff;
+}

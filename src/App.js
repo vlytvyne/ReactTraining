@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import ColorList from "./ColorList";
 import uuid from "react-uuid";
+import AddColorForm from "./AddColorForm";
 
 const colors = [
 	{
@@ -37,6 +38,7 @@ class App extends Component {
 		this.state = {colors}
 		this.rateColor = this.rateColor.bind(this)
 		this.deleteColor = this.deleteColor.bind(this)
+		this.addColor = this.addColor.bind(this)
 	}
 
 	rateColor(colorId, newRate) {
@@ -54,13 +56,29 @@ class App extends Component {
 		this.setState({colors})
 	}
 
+	addColor(title, hexColor) {
+		const colors = [
+			...this.state.colors,
+			{
+				id: uuid(),
+				title,
+				hexColor,
+				rating: 3
+			}
+		]
+		this.setState({colors})
+	}
+
 	render() {
 		return(
-			<ColorList
-				colors={this.state.colors}
-				onRate={this.rateColor}
-				onDelete={this.deleteColor}
-			/>
+			<div>
+				<AddColorForm onAddColor={this.addColor}/>
+				<ColorList
+					colors={this.state.colors}
+					onRate={this.rateColor}
+					onDelete={this.deleteColor}
+				/>
+			</div>
 		)
 	}
 }
