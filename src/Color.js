@@ -34,6 +34,22 @@ class Color extends Component {
 		rating: 3
 	}
 
+	componentDidMount() {
+		console.log(`color ${this.props.title} did mount`)
+	}
+
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		console.log(`color ${this.props.title} did update`)
+	}
+
+	componentWillUnmount() {
+		console.log(`color ${this.props.title} did unmount`)
+	}
+
+	shouldComponentUpdate(nextProps, nextState, nextContext) {
+		return this.props.rating !== nextProps.rating || this.props.title !== nextProps.title
+	}
+
 }
 
 export default Color
