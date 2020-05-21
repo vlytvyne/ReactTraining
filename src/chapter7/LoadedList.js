@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import fetch from 'isomorphic-fetch'
 import PeopleList from "./PeopleList";
 
-const LoadedList = (urlToLoad, ComposeComponent) =>
+export const LoadedList = (urlToLoad, ComposeComponent) =>
 class LoadedList extends Component {
 
 	constructor(props) {
@@ -48,7 +48,4 @@ class LoadedList extends Component {
 
 }
 
-const UsersList = LoadedList('https://randomuser.me/api/?results=', PeopleList)
-
-export { UsersList }
-export default LoadedList
+export const UsersList = LoadedList('https://randomuser.me/api/?results=', PeopleList)

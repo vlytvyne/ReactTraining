@@ -77,3 +77,16 @@
 .addButton:hover {
   background-color: #5900ff;
 }
+
+.colorDetails {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.colorDetailsText {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  text-align: right;
+}

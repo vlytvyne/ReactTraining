@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 class ColorList extends Component {
 
 	render() {
-		const {colors, onRate, onDelete} = this.props
+		const {colors, onRate, onDelete, onColorClick} = this.props
 		return (
 			<div className="colorList">
 				{
@@ -13,7 +13,7 @@ class ColorList extends Component {
 				<Color
 					key={i}
 					{...color}
-					onDelete={() => onDelete(color.id)}
+					onDelete={onDelete}
 					onRate={onRate}
 				/>)
 				}

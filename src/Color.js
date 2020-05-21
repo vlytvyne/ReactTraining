@@ -1,21 +1,22 @@
 import React, {Component} from "react";
 import StarRating from "./StarRating";
 import PropTypes from 'prop-types'
+import {withRouter} from 'react-router-dom'
 
 class Color extends Component {
 
 	render() {
-		const {id, title, hexColor, rating, onDelete, onRate} = this.props
+		const {id, title, hexColor, rating, onDelete, onRate, history} = this.props
 		return (
 			<div className="colorDiv">
 				<h1>{title}</h1>
-				<div className="colorShowcase" style={{backgroundColor: hexColor}}/>
+				<div className="colorShowcase" style={{backgroundColor: hexColor}} onClick={() => history.push(`/${id}`)}/>
 				<StarRating
 					maxRating={5}
 					curRating={rating}
 					onRate={(newRate) => onRate(id, newRate)}
 				/>
-				<button className="deleteButton" onClick={onDelete}>Delete</button>
+				<button className="deleteButton" onClick={() => onDelete(id)}>Delete</button>
 			</div>
 		)
 	}
@@ -52,4 +53,4 @@ class Color extends Component {
 
 }
 
-export default Color
+export default withRouter(Color)
